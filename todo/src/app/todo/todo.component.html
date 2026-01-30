@@ -1,0 +1,14 @@
+<h2> Simple To-Do List</h2>
+
+<!-- Two-way binding using [(ngModel)] to bind input to task -->
+<input [(ngModel)]="task" placeholder="Enter task" />
+<button (click)="addTask()">Add</button>
+
+<!-- List all tasks using *ngFor -->
+<ul>
+  <li *ngFor="let t of tasks; let i = index" appHover>
+    {{ i + 1 }}. {{ t }}
+    <button (click)="deleteTask(i)">Delete</button>
+  </li>
+</ul>
+
